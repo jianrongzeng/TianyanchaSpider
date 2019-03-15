@@ -1,0 +1,9 @@
+HOST_1 = '192.168.37.2'
+DATABASE_1 = 'expert'
+
+HOST_2 = '10.1.48.212'
+DATABASE_2 = 'data'
+
+PORT = 3306
+USER = 'root'
+PASSWORD_1 = 'nlp123456'
