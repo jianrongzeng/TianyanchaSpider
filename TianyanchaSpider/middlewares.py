@@ -4,8 +4,11 @@
 #
 # See documentation in:
 # https://doc.scrapy.org/en/latest/topics/spider-middleware.html
+import random
 
 from scrapy import signals
+
+from TianyanchaSpider.settings import USER_AGENTS
 
 
 class TianyanchaspiderSpiderMiddleware(object):
@@ -101,3 +104,9 @@ class TianyanchaspiderDownloaderMiddleware(object):
 
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
+
+
+class RandomUserAgent(object):
+    def process_request(self, request, spider):
+        user_agent = random.choice(USER_AGENTS)
+        request.headers.setdefault("User-Agent", user_agent)

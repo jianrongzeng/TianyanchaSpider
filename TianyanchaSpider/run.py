@@ -1,3 +1,3 @@
 from scrapy import cmdline
 
-cmdline.execute("scrapy crawl TianyanchaSpider".split())
+cmdline.execute("scrapy crawl TianyanchaSpider -o trs.json".split())

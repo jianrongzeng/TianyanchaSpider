@@ -55,7 +55,7 @@ class TianyanchaSpider(Spider):
         shareholder = response.meta['unit']
         divs = response.xpath("//div[@class='content']//div[@class='header']")
         for div in divs:
-            holding_company = div.xpath("string(.//a)").extract_first()
+            holding_company = div.xpath("string(.//a)").extract_first().replace("<em>", '').replace("</em>", '')
             company_status = div.xpath(".//div//text()").extract_first()
 
             item = TianyanchaspiderItem()
